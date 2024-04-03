@@ -6,9 +6,11 @@ export const PHOTO_GALLERY_ROUTES: Route[] = [
   {
     path: '',
     component: PhotoGalleryComponent,
+    title: 'Photo Gallery',
   },
   {
-    path: 'item',
+    path: ':id',
     component: PhotoItemViewComponent,
+    title: 'Photo Item',
   },
 ];
