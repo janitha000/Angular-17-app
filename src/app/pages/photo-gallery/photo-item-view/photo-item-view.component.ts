@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,9 +9,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './photo-item-view.component.scss',
 })
 export class PhotoItemViewComponent {
-  photoId!: string;
+  photoId = signal('');
   @Input()
   set id(id: string) {
-    this.photoId = id;
+    this.photoId.set(id);
   }
 }
