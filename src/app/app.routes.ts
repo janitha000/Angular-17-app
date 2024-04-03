@@ -1,9 +1,19 @@
 import { Routes } from '@angular/router';
-import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
+import { PhotoGalleryComponent } from './pages/photo-gallery/photo-gallery.component';
 
 export const routes: Routes = [
+  // {
+  //   path: 'photo-gallery',
+  //   loadComponent: () =>
+  //     import('./pages/photo-gallery/photo-gallery.component').then(
+  //       (mod) => mod.PhotoGalleryComponent
+  //     ),
+  // },
   {
     path: 'photo-gallery',
-    component: PhotoGalleryComponent,
+    loadChildren: () =>
+      import('./pages/photo-gallery/photo-gallery.routes').then(
+        (mod) => mod.PHOTO_GALLERY_ROUTES
+      ),
   },
 ];
