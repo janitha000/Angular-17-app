@@ -1,4 +1,9 @@
-import { Component, Input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  signal,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,6 +12,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [],
   templateUrl: './photo-item-view.component.html',
   styleUrl: './photo-item-view.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotoItemViewComponent {
   photoId = signal('');
